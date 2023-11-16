@@ -643,3 +643,4 @@ Received Import Request.
 Start importing Assets/Course Library/Prefabs/Obstacle.prefab using Guid(733a30470e17b48369a5598939f2998a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0950b8d7a148f2490e57f0c834cfb58a') in 0.013160 seconds 
   Import took 0.015568 seconds .
 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
