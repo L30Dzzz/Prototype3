@@ -5,9 +5,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public bool isOnGround = true;
-    private Rigidbody playerRb;
     public float jumpForce;
     public float gravityModifier;
+    private Rigidbody playerRb;
     
     // Start is called before the first frame update
     void Start()
@@ -29,5 +29,4 @@ public class PlayerController : MonoBehaviour
         {
             isOnGround = true;
         }
-    
 }
