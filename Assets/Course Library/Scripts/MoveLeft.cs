@@ -17,6 +17,6 @@ public class MoveLeft : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.left * Time.DeltaTime * speed); 
+        transform.Translate(Vector3.left * Time.deltaTime * speed); 
     }
 }
