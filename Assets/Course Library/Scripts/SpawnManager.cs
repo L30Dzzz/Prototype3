@@ -6,7 +6,7 @@ public class SpawnManager : MonoBehaviour
 {
     private float startDelay = 2;
     private float repeatRate = 2;
-    public GameObject obstaclePrefab;
+    public GameObject[] obstaclePrefab;
     private Vector3 spawnPos = new Vector3(25, 0, 0);
     private PlayerController PlayerControllerScript;
     
@@ -14,16 +14,16 @@ public class SpawnManager : MonoBehaviour
     void Start()
     {
         InvokeRepeating("SpawnObstacle", startDelay, repeatRate);
-        PlayerControllerScript =
-        GameObject.Find("Player").GetComponent<PlayerController>();
+        PlayerControllerScript = GameObject.Find("Player").GetComponent<PlayerController>();
     }
 
     // Spawns Obstacle
     void SpawnObstacle()
     {
+        int index = Random.Range(0, obstaclePrefab.Length);
         if (PlayerControllerScript.gameOver == false)
         {
-            Instantiate(obstaclePrefab, spawnPos, obstaclePrefab.transform.rotation);
+            Instantiate(obstaclePrefab[index], spawnPos, obstaclePrefab[index].transform.rotation);
         }
     }
 
