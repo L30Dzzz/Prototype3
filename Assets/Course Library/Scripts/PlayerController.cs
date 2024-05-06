@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
     public AudioClip crashSound;
     public AudioSource cameraAudio;
     private AudioSource playerAudio;
+
+    public bool doubleSpeed = false;
     
     // Start is called before the first frame update
     void Start()
@@ -50,7 +52,16 @@ public class PlayerController : MonoBehaviour
             doubleJump = false;
         }
 
-        //if (Input.GetKeyDown(KeyCode.LeftShift))
+        if(Input.GetKey(KeyCode.LeftShift))
+        {
+            doubleSpeed = true;
+            playerAnim.SetFloat("Speed_Multiplier", 2.0f);
+        }
+        else if (doubleSpeed)
+        {
+            doubleSpeed = false;
+            playerAnim.SetFloat("Speed_Multiplier", 1.0f);
+        }
     }
     
     private void OnCollisionEnter(Collision collision)
