@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //double jump
         if (Input.GetKeyDown(KeyCode.Space) && isOnGround && !gameOver)
         {
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
@@ -51,7 +52,8 @@ public class PlayerController : MonoBehaviour
             playerRb.AddForce(new Vector3(playerRb.velocity.x, doubleJumpForce));
             doubleJump = false;
         }
-
+        
+        //if press shift, double speed 
         if(Input.GetKey(KeyCode.LeftShift))
         {
             doubleSpeed = true;
