@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
         if(!playerControllerScript.gameOver)
         {
         
+        //score doubles
         if(playerControllerScript.doubleSpeed)
         {
             score += 2;
